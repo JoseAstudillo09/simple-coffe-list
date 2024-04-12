@@ -1,0 +1,25 @@
+---
+import Buttons from "./Buttons.astro";
+import Vector from "../assets/icons/Vector.astro"
+---
+
+<section class=" w-[1465px] h-[375px] bg-[#1B1D1F] rounded-xl text-center">
+    <div class="fixed ml-96">
+        <Vector/>
+    </div>
+  <div
+    class="fixed px-[475px] pt-20 flex flex-col "
+  >
+    <h5
+      class="font-semibold subpixel-antialiased tracking-wider mb-3 text-[#FEF7EE] text-[32px]"
+    >
+      Our Collection
+    </h5>
+    <p class="w-[500px] text-base font-medium text-wrap text-[#6F757C]">
+      Introducing our Coffee Collection, a selection of unique coffees from
+      different roast types and origins, expertly roasted in small batches and
+      shipped fresh weekly.
+    </p>
+    <Buttons />
+  </div>
+</section>
