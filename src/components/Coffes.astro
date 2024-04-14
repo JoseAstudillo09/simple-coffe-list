@@ -1,15 +1,31 @@
 ---
-import {type APICoffeListResponse} from '../types/api'
-const res = await fetch('https://raw.githubusercontent.com/devchallenges-io/web-project-ideas/main/front-end-projects/data/simple-coffee-listing-data.json')
+import CardCoffes from "./CardCoffes.astro"
 
-const data =  await res.json()
+const coffes = await fetch("https://raw.githubusercontent.com/devchallenges-io/web-project-ideas/main/front-end-projects/data/simple-coffee-listing-data.json").then(res => res.json())
+interface responseData{
+    name:      string
+    image:     string
+    price:     string
+    rating:    number | null | string
+    votes:     number
+    popular:   boolean
+    available: boolean
+}
 ---
 
 <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
     {
-        data.map((data: ) => 
-            <h2>{data}</h2>
-        )
+        coffes.map((coffe: responseData)=>(
+            <CardCoffes
+                name={coffe.name}
+                image={coffe.image}
+                price={coffe.price}
+                rating={coffe.rating}
+                votes={coffe.votes}
+                popular={coffe.popular}
+                available={coffe.available}
+            />
+        ))
     }
 
 </div>
