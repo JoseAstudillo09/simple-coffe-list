@@ -1,5 +1,7 @@
 ---
+import "@fontsource/dm-sans";
 import Star_fillIcon from "../assets/icons/Star_fill.astro";
+import StarIcon from "../assets/icons/Star.astro"
 interface Props {
   name: string;
   image: string;
@@ -11,30 +13,32 @@ interface Props {
 }
 
 const { name, image, rating, votes, price, available, popular } = Astro.props;
-const coffeStock = available ? "" : "Sold Out"
-const coffePopular = popular ? "Popular" : ""
+const coffeStock = available ? "" : "Sold Out";
+const coffePopular = popular ? "Popular" : "";
 ---
 
-<article class="font-semibold">
+<article class="font-semibold w-[260px]  ">
   <div class="relative">
     <img class="rounded-xl" src={image} alt="" />
     <p
-        class:list={["absolute top-0 m-2 rounded-full px-4 py-1 text-[10px]",{
-            "bg-[#F6C768] text-[#111315]": popular
-        }
-        ]}
+      class:list={[
+        "absolute top-0 m-2 rounded-full px-4 py-1 text-[10px]",
+        {
+          "bg-[#F6C768] text-[#111315]": popular,
+        },
+      ]}
     >
       {coffePopular}
     </p>
   </div>
-  <div class="flex flex-row gap-[120px] pt-2">
-    <h2>{name}</h2>
-    <p class="rounded bg-[#BEE3CC] px-3 py-1 text-[#111315] text-[12px]">{price}</p>
+  <div class="flex flex-row gap-[75px] pt-2">
+    <h2 class="text-left w-[130px]">{name}</h2>
+    <p class="rounded bg-[#BEE3CC] px-3 py-1 font-semibold text-[#111315] text-[14px]">
+      {price}
+    </p>
   </div>
-  <div class="flex flex-row gap-1 pt-2">
-    <Star_fillIcon />
-    <h1>{rating}</h1>
-    <h1 class="text-[#6F757C]">({votes} votes)</h1>
-    <p class="pl-[70px] text-[#ED735D]">{coffeStock}</p>
+  <div class="flex text-base items-center flex-row gap-1 pt-2 font-medium">
+    {rating ? <Star_fillIcon /> <h1 class="">{rating}</h1> <h1 class="text-[#6F757C]">({votes} votes)</h1> : <StarIcon/> <h1 class="text-[#6F757C]">No ratings</h1>}
+    <p class="pl-[50px] text-[#ED735D]">{coffeStock}</p>
   </div>
 </article>
