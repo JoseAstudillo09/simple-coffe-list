@@ -17,7 +17,7 @@ const coffeStock = available ? "" : "Sold Out";
 const coffePopular = popular ? "Popular" : "";
 ---
 
-<article class="font-semibold w-[260px]  ">
+<article class="font-semibold w-[262px]  ">
   <div class="relative">
     <img class="rounded-xl" src={image} alt="" />
     <p
@@ -33,12 +33,12 @@ const coffePopular = popular ? "Popular" : "";
   </div>
   <div class="flex flex-row gap-[75px] pt-2">
     <h2 class="text-left w-[130px]">{name}</h2>
-    <p class="rounded bg-[#BEE3CC] px-3 py-1 font-semibold text-[#111315] text-[14px]">
+    <p class="rounded font-bold bg-[#BEE3CC] px-3 py-1 text-[#111315] text-[12px]">
       {price}
     </p>
   </div>
-  <div class="flex text-base items-center flex-row gap-1 pt-2 font-medium">
+  <div class="flex text-sm items-center text-center flex-row gap-1 pt-2 font-semibold">
     {rating ? <Star_fillIcon /> <h1 class="">{rating}</h1> <h1 class="text-[#6F757C]">({votes} votes)</h1> : <StarIcon/> <h1 class="text-[#6F757C]">No ratings</h1>}
-    <p class="pl-[50px] text-[#ED735D]">{coffeStock}</p>
+    <p class="pl-[70px] text-sm font-bold text-[#ED735D]">{coffeStock}</p>
   </div>
 </article>

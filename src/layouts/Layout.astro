@@ -1,6 +1,7 @@
 ---
 import "@fontsource/dm-sans";
 import MainCard from "../components/MainCard.astro";
+import Footer from "../components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
 interface Props {
   title: string;
@@ -18,21 +19,29 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions/>
+    <ViewTransitions />
   </head>
-  <body class="relative w-full flex flex-col items-center justify-center">
-    <img class="" src="src/assets/images/bg-cafe.jpg" alt="coffe-image" />
-    <MainCard>
-      <slot />
-    </MainCard>
+  <body>
+    <main class=" w-full flex flex-col items-center justify-center">
+      <MainCard>
+        <slot />
+      </MainCard>
+    </main>
+    <Footer />
   </body>
 </html>
 <style is:global>
-  :root {
-    color-scheme: dark light;
-  }
-  html {
-    font-family:"Dm Sans Variable", system-ui, sans-serif;
-    background: #111315;
-  }
-</style>
+    :root {
+      color-scheme: dark light;
+    }
+    html {
+      font-family: "Dm Sans", system-ui, sans-serif;
+      background: #111315;
+      background-image: url('src/assets/images/bg-cafe.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    body{
+      height: auto;
+    }
+  </style>

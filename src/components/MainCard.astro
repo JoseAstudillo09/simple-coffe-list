@@ -1,24 +1,25 @@
 ---
 import Buttons from "./ButtonsMainCard.astro";
 import Vector from "../assets/icons/Vector.astro";
+import Coffes from "./Coffes.astro";
 ---
 
 <section
-  class="absolute w-[414px] mt-[75px] md:w-[1050px] md:mt-[153px] xl:mt-[875px] xl:w-[1280px] 2xl:mt-[213px] 2xl:w-[1460px] h-[850px] bg-[#1B1D1F] flex rounded-xl text-center"
+  class=" w-[424px] mt-[100px] md:w-[1050px] md:mt-[153px] xl:mt-[185px] xl:w-[1280px] 2xl:mt-[213px] 2xl:w-[1460px] h-dvh md:h-[850px] bg-[#1B1D1F] flex rounded-xl text-center"
 >
-  <div class="absolute mt-9 xl:pl-[653px] pl-[520px]">
+  <div class="absolute mt-9 pl-[155px] xl:pl-[630px] md:pl-[520px]">
     <Vector />
   </div>
   <div
-    class="absolute px-[65px] md:px-[150px] pt-20 2xl:px-[450px] xl:w-[1280px] flex flex-col justify-center items-center"
+    class="absolute px-[15px] md:px-[150px] pt-20 2xl:px-[450px] xl:w-[1280px] flex flex-col justify-center items-center"
   >
     <h5
-      class="font-semibold subpixel-antialiased mb-3 text-[#FEF7EE] text-4xl w-[500px] "
+      class="font-semibold subpixel-antialiased mb-3 text-[#FEF7EE] text-4xl w-[400px] md:w-[500px] "
     >
       Our Collection
     </h5>
     <p
-      class="w-[300px] md:w-[520px] text-lg font-medium text-wrap text-[#6F757C]"
+      class="w-[310px] md:w-[500px] text-md font-semibold text-wrap text-[#6F757C]"
     >
       Introducing our Coffee Collection, a selection of unique coffees from
       different roast types and origins, expertly roasted in small batches and
@@ -28,6 +29,6 @@ import Vector from "../assets/icons/Vector.astro";
       <Buttons href="/">All Products</Buttons>
       <Buttons href="/available-coffes">Available Now</Buttons>
     </div>
-    <slot />
+    <slot/>
   </div>
 </section>

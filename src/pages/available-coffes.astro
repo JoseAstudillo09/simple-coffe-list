@@ -1,9 +1,38 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
+import CardCoffes from "../components/CardCoffes.astro";
 
+const coffes = await fetch(
+  "https://raw.githubusercontent.com/devchallenges-io/web-project-ideas/main/front-end-projects/data/simple-coffee-listing-data.json"
+).then((res) => res.json());
+interface responseData {
+  name: string;
+  image: string;
+  price: string;
+  rating: number | null | string;
+  votes: number;
+  popular: boolean;
+  available: boolean;
+}
 ---
 
 <Layout title="Coffe available now">
-    <h1>Hola mundo</h1>
+  <div
+    class="grid gap-x-10 gap-y-12 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items-center justify-center"
+  >
+    {
+      coffes.filter((coffe: responseData) => coffe.available != false).map((coffe: responseData) => (
+        <CardCoffes
+          name={coffe.name}
+          image={coffe.image}
+          price={coffe.price}
+          rating={coffe.rating}
+          votes={coffe.votes}
+          popular={coffe.popular}
+          available={coffe.available}
+        />
+      ))
+    }
+  </div>
 </Layout>
